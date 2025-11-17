@@ -1,25 +1,37 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
+import Navigation from "./components/Navigation";
+import Footer from "./components/Footer";
+import Index from "./components/Index"; 
+import Home from "./components/Home";
+import Transactions from "./components/Transactions";
+import Notifications from "./components/Notifications";
+import Profile from "./components/Profile";
 
-function App() {
+const AppLayout = () => {
+  const location = useLocation();
+  const hideHeaderFooter = location.pathname === "/" || location.pathname === "/index";
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      {!hideHeaderFooter && <Navigation />}
+      <Routes>
+        <Route index element={<Index />} />
+        <Route path="/" element={<Index />} />
+        <Route path="/index" element={<Index />} />
+        <Route path="/home" element={<Home />} />
+        <Route path="/transactions" element={<Transactions />} />
+        <Route path="/notifications" element={<Notifications />} />
+        <Route path="/profile" element={<Profile />} />
+      </Routes>
+      {!hideHeaderFooter && <Footer />}
+    </>
   );
-}
+};
+
+const App = () => (
+  <BrowserRouter>
+    <AppLayout />
+  </BrowserRouter>
+);
 
 export default App;

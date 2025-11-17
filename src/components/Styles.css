@@ -1,0 +1,256 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins";
+}
+
+/* HEADER */
+.navbar {
+  background-color: #8f0002;
+}
+
+.logo {
+  height: 30px;
+  border-radius: 50%;
+}
+
+.navbar-toggler,
+.navbar-toggler:focus,
+.navbar-toggler:active {
+  border: none;
+  box-shadow: none;
+}
+
+.navbar .nav-link {
+  color: #ffcc00;
+}
+
+.navbar .nav-link.active,
+.navbar .nav-link:hover {
+  color: #00ff00 !important;
+}
+
+/* FOOTER */
+footer {
+  background-color: #8f0002;
+  color: #ffcc00;
+}
+
+footer a, p {
+  text-decoration: none;
+  color: white;
+  transition: all 0.2s ease-in-out;
+}
+
+footer a:hover:not(:has(.fa-brands)) {
+  color: #00ff00 !important;
+}
+
+footer .fa-solid {
+  margin-right: 10px;
+}
+
+.fa-brands {
+  font-size: 2rem;
+  margin-right: 10px;
+}
+
+.fa-facebook:hover {color: #3b5998}
+.fa-youtube:hover {color: #ff0033}
+.fa-x-twitter:hover {color: black}
+
+
+/* GENERAL */
+main {
+  min-height: 100vh;
+}
+
+main p {
+  color: black;
+}
+
+.form-control:focus,
+.form-select:hover,
+.form-select:focus,
+input:hover,
+textarea:hover {
+  border-width: 1.5px;
+  border-color:  #8f0002;
+}
+
+input:focus:not(#search_input) {
+  box-shadow: none;
+}
+
+#search_input {
+  color: #8f0002;
+  border-radius: 0.5rem;   
+  transition: all 0.3s ease;  
+}
+
+#search_input:focus,
+#search_input:hover {
+  border-color: #8f0002;
+  box-shadow: 0 0 0 0.25rem rgba(143, 0, 2, 0.25);
+}
+
+textarea:focus,
+.form-select:focus,
+.form-control[readonly]:focus,
+.form-control[readonly]:hover {
+  box-shadow: none !important;
+  border-color: #ced4da;
+  cursor: default;
+}
+
+.cursor-pointer { cursor: pointer !important;}
+.fs-7 { font-size: 10px !important; }
+
+#password {
+  position: relative;
+}
+
+i.eye {
+  position: absolute;
+  top: 50%;
+  right: 30px;
+  transform: translateY(-50%);
+  z-index: 20;
+}
+
+@media(min-width: 800px){
+  .px-lg-6 {
+    --mx-lg-6-padding-x: 10rem;       
+    padding-left: var(--mx-lg-6-padding-x);
+    padding-right: var(--mx-lg-6-padding-x);
+  }
+}
+
+/* INDEX */
+.book {
+  transform: translateY(20px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.book:hover {
+  transform: scale(1.05) !important;
+}
+
+.book.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.book-image {
+  width: 100%;
+  height: 80%;
+  overflow: hidden;
+}
+
+.book-image img {
+  max-width: 100%;
+  width: auto;
+  height: 100%;
+  margin: 0 auto;
+  object-fit: cover;
+  display: block;
+} 
+
+.book-title {
+  font-size: clamp(12px, 1.5vw, 16px);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.btn-like {
+  position: absolute;
+  top: 5px;
+  right: 15%;
+  z-index: 10;
+  border: none;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+  font-size: 1.2rem;
+}
+
+@media (min-width: 500px) {
+  .btn-like {
+    right: 6%;
+  }
+}
+
+@media (min-width: 800px) {
+  .btn-like {
+    right: 10%;
+  }
+}
+
+.bi-heart {
+  color: white;
+}
+
+.bi-heart-fill {
+  color: red;
+}
+
+.bi-heart:hover {
+  color: red;
+}
+
+.bi-heart-fill:hover {
+  color: white;
+}
+
+/* TRANSACTIONS */
+.tab-pane .card {
+  transition: all 0.3s ease-in-out;
+}
+
+.tab-pane .card:hover {
+  transform: scale(1.03);
+}
+
+@media (min-width: 800px) {
+  .tab-pane .card:hover {
+    transform: scale(1.01);
+  }
+}
+
+/* PROFILE */
+.profile-picture {
+  height: 200px;
+  font-size: 200px;
+}
+
+.profile-picture img {
+  height: 100%;
+}
+
+
+.profile-change-chevron:hover {
+  background-color: #f2f2f2;
+}
+
+.profile-change-chevron h6 {
+  color: 091216;
+}
+
+/* NOTIFICATIONS */
+.notification {
+  transition: all 0.3s ease-in-out;
+}
+
+.notification:hover {
+  transform: scale(1.03);
+}
+
+@media (min-width: 800px) {
+  .notification:hover {
+    transform: scale(1.01);
+  }
+}
